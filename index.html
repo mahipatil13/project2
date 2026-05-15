@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Gallery Website</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#07111f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+    }
+
+    nav h1{
+      font-size:32px;
+      color:#00e5ff;
+      letter-spacing:3px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    nav ul li a:hover{
+      color:#00e5ff;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+      url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1920&auto=format&fit=crop");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeIn 2s ease;
+    }
+
+    .hero h2{
+      font-size:75px;
+      color:#00e5ff;
+      margin-bottom:20px;
+      text-shadow:0 0 20px cyan;
+    }
+
+    .hero p{
+      font-size:22px;
+      max-width:800px;
+      line-height:1.7;
+      color:#ddd;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:50px;
+      margin-bottom:60px;
+      color:#00e5ff;
+      text-transform:uppercase;
+      letter-spacing:3px;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+      border-radius:25px;
+      background:#111827;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      transition:0.5s;
+    }
+
+    .card:hover{
+      transform:translateY(-12px) scale(1.03);
+      box-shadow:0 15px 40px rgba(0,229,255,0.4);
+    }
+
+    .card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .card:hover img{
+      transform:scale(1.1);
+    }
+
+    .overlay{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      padding:20px;
+      background:linear-gradient(transparent, rgba(0,0,0,0.9));
+      text-align:center;
+    }
+
+    .overlay h3{
+      font-size:24px;
+      color:white;
+    }
+
+    /* SECTION BACKGROUNDS */
+
+    #virat{
+      background:
+      linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+      url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1600&auto=format&fit=crop");
+      background-size:cover;
+      background-attachment:fixed;
+    }
+
+    #cars{
+      background:
+      linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+      url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1600&auto=format&fit=crop");
+      background-size:cover;
+      background-attachment:fixed;
+    }
+
+    #nature{
+      background:
+      linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+      url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop");
+      background-size:cover;
+      background-attachment:fixed;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      text-align:center;
+      padding:40px;
+      color:#aaa;
+    }
+
+    footer h2{
+      margin-bottom:10px;
+      color:#00e5ff;
+    }
+
+    /* SCROLLBAR */
+
+    ::-webkit-scrollbar{
+      width:10px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:#00e5ff;
+      border-radius:20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <h1>MY GALLERY</h1>
+
+    <ul>
+      <li><a href="#cars">Cars</a></li>
+      <li><a href="#nature">Nature</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <div class="hero-content">
+      <h2>Premium Image Gallery</h2>
+
+      
+    </div>
+
+  </div>
+
+
+  <!-- CARS SECTION -->
+
+  <section id="cars">
+
+    <h2 class="section-title">Luxury Cars</h2>
+
+    <div class="gallery">
+
+      <script>
+
+        const carImages = [
+          "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1000",
+          "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1000",
+          "https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1000",
+          "https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1000",
+          "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1000"
+        ];
+
+        for(let i=1;i<=30;i++){
+
+          document.write(`
+
+          <div class="card">
+
+            <img src="${carImages[i % carImages.length]}" alt="Luxury Cars">
+
+            <div class="overlay">
+              <h3>Luxury Car ${i}</h3>
+            </div>
+
+          </div>
+
+          `)
+        }
+
+      </script>
+
+    </div>
+
+  </section>
+
+  <!-- NATURE SECTION -->
+
+  <section id="nature">
+
+    <h2 class="section-title">Nature Collection</h2>
+
+    <div class="gallery">
+
+      <script>
+
+        const natureImages = [
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000",
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000",
+          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000",
+          "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1000",
+          "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000"
+        ];
+
+        for(let i=1;i<=30;i++){
+
+          document.write(`
+
+          <div class="card">
+
+            <img src="${natureImages[i % natureImages.length]}" alt="Nature">
+
+            <div class="overlay">
+              <h3>Nature ${i}</h3>
+            </div>
+
+          </div>
+
+          `)
+        }
+
+      </script>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>Modern UI Website</h2>
+
+    <p>
+      Designed using HTML + CSS + JavaScript with premium responsive UI.
+    </p>
+
+  </footer>
+
+</body>
+</html>
